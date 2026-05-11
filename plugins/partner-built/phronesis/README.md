@@ -28,16 +28,16 @@ Each vertical's forecasts are **emitted at industry-aggregate granularity** with
 
 The plugins are complementary. A pitch agent might pull current comparables from LSEG/S&P and forward-looking probability distributions from Phronesis to assemble a complete view.
 
-## Status (Sprint 5.16, May 2026)
+## Status (Sprint 5.19, May 2026)
 
-This is a **scaffold plugin** (PR-Anthropic-Repo-1). It exposes the Phronesis MCP server as an `http` connector at `https://phronesis-jrstinehour.replit.app/mcp` and registers the plugin manifest + agent-discovery surfaces.
+Plugin v0.2.0. Sprint 5.16 PR-Anthropic-Repo-1 landed the **plugin scaffold** (manifest, MCP connector at `https://phronesis-jrstinehour.replit.app/mcp`, agent-discovery surfaces). Sprint 5.19 PR-Anthropic-Repo-2 (this PR) adds **13 SKILL.md files**: eight per-vertical forecasting skills (V#1 Energy, V#2 Compute+AI, V#3 Healthcare, V#4 Climate, V#5 Regulatory, V#6 Supply Chain, V#7 Space, V#8 Robotics) and five cross-vertical capability skills (calibration-scorecard, methodology-ledger, forecast-distribution-comparison, scenario-attribution, evidence-chain-audit).
 
-Subsequent PRs in the Sprint 5.16-5.17 sub-arc add:
+Skills land in `skills/<skill-name>/SKILL.md`. Each skill describes its tool-chaining workflow against the Phronesis MCP server, the canonical query shape, the calibration evidence it surfaces, and the disclaimer scope.
 
-- **PR-Anthropic-Repo-2**: Eight per-vertical forecasting skills (V#1-V#8 SKILL.md files at `skills/<vertical>/`) — one per Pythia ring, each describing query patterns and calibration-score expectations.
-- **PR-Anthropic-Repo-3**: Five cross-vertical capability skills (calibration-score retrieval, methodology-ledger lookup, forecast-distribution comparison, scenario-attribution, evidence-chain audit).
-- **PR-Anthropic-Repo-4**: Managed Agent cookbook entry under `managed-agent-cookbooks/phronesis-forecaster/` for direct deployment via the Claude Managed Agents API.
-- **PR-Anthropic-Repo-5**: Documentation, examples, and final validation against `scripts/check.py` and `scripts/sync-agent-skills.py`.
+Roadmap (Sprint 5.20+):
+
+- **PR-Anthropic-Repo-3**: Managed Agent cookbook entry under `managed-agent-cookbooks/phronesis-forecaster/` for direct deployment via the Claude Managed Agents API.
+- **PR-Anthropic-Repo-4**: Worked examples, deployment patterns, and final validation refinements.
 
 ## How to use
 
